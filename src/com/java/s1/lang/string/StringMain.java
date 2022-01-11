@@ -6,7 +6,11 @@ public class StringMain {
 		
 		StringStudy1 ss = new StringStudy1();
 		
-		ss.subStringEx1();
+		ss.splitTest();
+		//ss.valueTest();
+		//ss.caseTest();
+		//ss.replaceTest();
+		//ss.subStringEx1();
 		//ss.subStringTest();
 		//ss.lengthTest();
 		//ss.indexOfTest();

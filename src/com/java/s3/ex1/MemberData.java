@@ -16,6 +16,15 @@ public class MemberData {
 		System.out.println(this.data);
 	}
 	
+	public void addMember(ArrayList<MemberDTO> arr) {
+		
+		//키보드로부터 새로 추가할 MemberDTO 생성
+		//키보드로부터 id, pw, name, email, age 입력받아서
+		//MemberDTO의 멤버변수 값으로 대입
+		//매개변수로 받은 arr에 MemberDTO 추가
+		
+	}
+	
 	public ArrayList<MemberDTO> init() {
 		//Data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입
@@ -37,9 +46,6 @@ public class MemberData {
 			memberDTO.setPw(token.trim());
 			
 			token = st.nextToken();
-			memberDTO.setPw(token.trim());
-			
-			token = st.nextToken();
 			memberDTO.setName(token.trim());
 			
 			token = st.nextToken();
@@ -53,7 +59,7 @@ public class MemberData {
 		}
 
 
-		return null;	
+		return arr;	
 	}
 	
 }

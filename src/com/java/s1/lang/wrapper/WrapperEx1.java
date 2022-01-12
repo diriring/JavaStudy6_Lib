@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class WrapperEx1 {
 	
-	Scanner sc = new Scanner(System.in);
+	private Scanner sc;
 
 	public void ex2() {
+		this.sc = new Scanner(System.in);
 		System.out.println("주민번호를 입력해주세요");
 		String idNum = sc.next();
 		String [] nums = idNum.split("-");
@@ -39,77 +40,46 @@ public class WrapperEx1 {
 
 	}
 	public void ex1() {
+		this.sc = new Scanner(System.in);
 		System.out.println("주민번호를 입력해주세요");
 		String idNum = sc.next();
 		String [] nums = idNum.split("-");
 		
-		int birth = Integer.parseInt(nums[0].substring(2, 4));
+		int birth = Integer.parseInt(nums[0].substring(0,2));
+		int month = Integer.parseInt(nums[0].substring(2, 4));
 		int gender = Integer.parseInt(nums[1].substring(0, 1));
 		
 //		System.out.println(birth);
 //		System.out.println(gender);
 		
-		if(gender == 1 || gender == 3) {
+		if(gender <= 2) {
+			System.out.println("만 " + (2022 - (1900 + birth)) + "세");	
+		}
+		
+		if(gender >= 3) {
+			System.out.println("만 " + (2022 - (2000 + birth)) + "세");
+		}
+		
+		
+		if(gender%2 == 1) {
 			
 			System.out.println("남성");
 			
-			switch (birth) {
-            case 1:  System.out.println("1월 : 겨울 출생");
-                     break;
-            case 2:  System.out.println("2월 : 겨울 출생");
-                     break;
-            case 3:  System.out.println("3월 : 봄 출생");
-                     break;
-            case 4:  System.out.println("4월 : 봄 출생");
-                     break;
-            case 5:  System.out.println("5월 : 봄 출생");
-                     break;
-            case 6:  System.out.println("6월 : 여름 출생");
-                     break;
-            case 7:  System.out.println("7월 : 여름 출생");
-                     break;
-            case 8:  System.out.println("8월 : 여름 출생");
-                     break;
-            case 9:  System.out.println("9월 : 가을 출생");
-                     break;
-            case 10: System.out.println("10월 : 가을 출생");
-                     break;
-            case 11: System.out.println("11월 : 가을 출생");
-                     break;
-            case 12: System.out.println("12월 : 겨울 출생");
-                     break;
-			}
-			
-		}else if(gender == 2 || gender == 4) {
+		}else if(gender%2 == 0) {
 			
 			System.out.println("여성");
 			
-			switch (birth) {
-            case 1:  System.out.println("1월 : 겨울 출생");
-                     break;
-            case 2:  System.out.println("2월 : 겨울 출생");
-                     break;
-            case 3:  System.out.println("3월 : 봄 출생");
-                     break;
-            case 4:  System.out.println("4월 : 봄 출생");
-                     break;
-            case 5:  System.out.println("5월 : 봄 출생");
-                     break;
-            case 6:  System.out.println("6월 : 여름 출생");
-                     break;
-            case 7:  System.out.println("7월 : 여름 출생");
-                     break;
-            case 8:  System.out.println("8월 : 여름 출생");
-                     break;
-            case 9:  System.out.println("9월 : 가을 출생");
-                     break;
-            case 10: System.out.println("10월 : 가을 출생");
-                     break;
-            case 11: System.out.println("11월 : 가을 출생");
-                     break;
-            case 12: System.out.println("12월 : 겨울 출생");
-                     break;
 			}
+		
+		switch (month) {
+        case 1, 2, 12:  System.out.println("겨울 출생");
+                 break;
+        case 3, 4, 5:  System.out.println("봄 출생");
+                 break;
+        case 6, 7, 8:  System.out.println("여름 출생");
+                 break;
+        case 9, 10, 11:  System.out.println("가을 출생");
+                 break;
 		
 		}
 

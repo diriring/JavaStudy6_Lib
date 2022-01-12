@@ -6,8 +6,8 @@ public class WrapperMain {
 		
 		WrapperEx1 we = new WrapperEx1();
 		
-		//we.ex1();
-		we.ex2();
+		we.ex1();
+//		we.ex2();
 		
 //		int num = 10;
 //		Integer n = Integer.valueOf(num);

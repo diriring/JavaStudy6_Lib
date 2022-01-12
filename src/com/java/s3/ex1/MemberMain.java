@@ -11,6 +11,7 @@ public class MemberMain {
 		ArrayList<MemberDTO> arr = new ArrayList<>();
 		
 		arr = memberData.init();
+		memberData.addMember(arr);
 		
 		for(int i=0;i<arr.size();i++) {
 			System.out.println("아이디 : " + arr.get(i).getId());

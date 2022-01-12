@@ -1,14 +1,17 @@
 package com.java.s3.ex1;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class MemberData {
 	
 	private String data;
+	private Scanner sc;
 	
 	//기본생성자 선언
 	public MemberData() {
+		this.sc = new Scanner(System.in);
 		this.data = "id1-pw1-name1-id1@gmail.com-20-";
 		this.data = this.data + "id2 - pw2 - name2 - name2@naver.com-42-";
 		this.data = this.data + "id3 - pw3 - name3 - name3@naver.com-36-";
@@ -22,6 +25,19 @@ public class MemberData {
 		//키보드로부터 id, pw, name, email, age 입력받아서
 		//MemberDTO의 멤버변수 값으로 대입
 		//매개변수로 받은 arr에 MemberDTO 추가
+		MemberDTO newMember = new MemberDTO();
+		System.out.println("id 입력");
+		newMember.setId(sc.next());
+		System.out.println("pw 입력");
+		newMember.setPw(sc.next());
+		System.out.println("name 입력");
+		newMember.setName(sc.next());
+		System.out.println("email 입력");
+		newMember.setEmail(sc.next());
+		System.out.println("나이 입력");
+		newMember.setAge(sc.nextInt());
+		
+		arr.add(newMember);
 		
 	}
 	

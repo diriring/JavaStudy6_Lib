@@ -28,30 +28,29 @@ public class MemberData {
 		
 		while(st.hasMoreTokens()) {
 			
+			MemberDTO memberDTO = new MemberDTO();
+			
 			String token = st.nextToken();
-			MemberDTO.setId((String) token.trim());
+			memberDTO.setId(token.trim());
 			
 			token = st.nextToken();
-			MemberDTO.setPw(Integer.parseInt(token.trim()));
+			memberDTO.setPw(token.trim());
 			
 			token = st.nextToken();
-			MemberDTO.setPw(Integer.parseInt(token.trim()));
+			memberDTO.setName(token.trim());
 			
 			token = st.nextToken();
-			MemberDTO.setName(Integer.parseInt(token.trim()));
+			memberDTO.setEmail(token.trim());
 			
 			token = st.nextToken();
-			MemberDTO.setEmail(Integer.parseInt(token.trim()));
-			
-			token = st.nextToken();
-			MemberDTO.setAge(Integer.parseInt(token.trim()));
+			memberDTO.setAge(Integer.parseInt(token.trim()));
 			
 			arr.add(memberDTO);
 			
 		}
 
 
-		return null;	
+		return arr;	
 	}
 	
 }

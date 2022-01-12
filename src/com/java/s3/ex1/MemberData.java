@@ -19,6 +19,25 @@ public class MemberData {
 		System.out.println(this.data);
 	}
 	
+	public MemberDTO RemoveMember(ArrayList<MemberDTO> arr) {
+		//삭제하고싶은 id를 입력받음
+		//ArrayList에서 똑같은 id를 가진 MemberDTO를 찾아 삭제
+		//
+		MemberDTO memberDTO = null;
+		
+		System.out.println("삭제할 학생의 id 입력");
+		String delId = sc.next();
+		
+		for(int i=0;i<arr.size();i++) {
+			if(delId.equals(arr.get(i).getId())) {
+				memberDTO = arr.remove(i);
+				break;
+			}
+		}
+		
+		return memberDTO;
+	}
+	
 	public void addMember(ArrayList<MemberDTO> arr) {
 		
 		//키보드로부터 새로 추가할 MemberDTO 생성

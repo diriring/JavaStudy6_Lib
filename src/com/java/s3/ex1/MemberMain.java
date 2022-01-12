@@ -11,7 +11,13 @@ public class MemberMain {
 		ArrayList<MemberDTO> arr = new ArrayList<>();
 		
 		arr = memberData.init();
-		memberData.addMember(arr);
+		//memberData.addMember(arr);
+		MemberDTO memberDTO = memberData.RemoveMember(arr);
+		if(memberDTO != null) {
+			System.out.println("삭제 성공");
+		}else {
+			System.out.println("삭제 실패");
+		}
 		
 		for(int i=0;i<arr.size();i++) {
 			System.out.println("아이디 : " + arr.get(i).getId());

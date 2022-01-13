@@ -1,10 +1,26 @@
 package com.java.s2.util.collection;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ListStudy {
 	
 	private final int NUM = 1;
+	
+	public List<String> study5() {
+		ArrayList<String> list = new ArrayList<>();
+		list.add("1");
+		return list;
+	}
+	
+	public void study4() {
+		LinkedList<Integer> list = new LinkedList<>(); //<>안에는 reference type만
+		list.add(1);
+		list.add(2);
+		
+		System.out.println(list.get(0));
+	}
 	
 	public void study3() {
 		//ArrayList<E> 변수명 = new ArrayList<E>();
